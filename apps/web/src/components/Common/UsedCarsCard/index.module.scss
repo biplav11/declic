@@ -1,0 +1,155 @@
+@import "@/styles/variables";
+
+.wrapper {
+  border: 1px solid $border-color;
+  padding: 10px;
+  border-radius: 10px;
+  transition: all ease-in-out 0.3s;
+
+  &:hover {
+    border-color: $primary;
+
+    .thumbnail {
+      transform: scale(1.1);
+    }
+
+    .title,
+    .price {
+      color: $primary;
+    }
+  }
+
+  // @media (min-width: 100px) {
+  //     width: calc(100% - 22px);
+  // }
+
+  // @media (min-width: 768px) {
+  //     width: calc(50% - 32px);
+  // }
+
+  // @media (min-width: 992px) {
+  //     width: calc(33.333333% - 36px);
+  // }
+
+  // @media (min-width: 1200px) {
+  //     width: calc(25% - 37px);
+  // }
+}
+
+.thumbnailWrapper {
+  width: 248px;
+  overflow: hidden;
+  position: relative !important;
+  border-radius: 10px;
+  display: block;
+
+  @media (min-width: 100px) {
+    width: 100%;
+  }
+
+  @media (min-width: 768px) {
+  }
+
+  @media (min-width: 992px) {
+  }
+
+  @media (min-width: 1200px) {
+  }
+
+  @media (min-width: 1400px) {
+  }
+}
+
+.thumbnail {
+  height: 160px;
+  width: 248px;
+  object-fit: cover;
+  object-position: center;
+  overflow: hidden;
+  transition: all ease-in-out 0.3s;
+  border-radius: 10px;
+
+  @media (min-width: 100px) {
+    width: 100%;
+    height: 180px;
+  }
+
+  @media (min-width: 768px) {
+  }
+
+  @media (min-width: 992px) {
+    height: 160px;
+  }
+
+  @media (min-width: 1200px) {
+  }
+
+  @media (min-width: 1400px) {
+  }
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 500;
+  color: $text-color;
+  transition: all ease-in-out 0.3s;
+}
+
+.price {
+  font-size: 14px;
+  color: $icon-color;
+  transition: all ease-in-out 0.3s;
+  font-weight: 500;
+}
+
+.engine {
+  font-size: 12px;
+  color: $light-text;
+  transition: all ease-in-out 0.3s;
+  font-weight: 500;
+}
+
+.proSeller,
+.imageCount {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: black;
+  position: absolute;
+  bottom: 5px;
+  border-radius: 7px;
+  color: $white;
+  opacity: 0.7;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding-bottom: 6px;
+}
+
+.proSeller {
+  left: 5px;
+}
+
+.imageCount {
+  right: 5px;
+}
+
+.deleteBtn {
+  position: absolute !important;
+  top: 5px;
+  right: 5px;
+}
+
+.tag {
+  border: 1px solid $border-color;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  color: $text-color;
+  text-transform: capitalize;
+}
+
+.info {
+  font-size: 12px;
+  color: $text-color;
+  text-transform: capitalize;
+}

@@ -1,0 +1,92 @@
+@import '@/styles/variables';
+
+.wrapper {
+    border: 1px solid $border-color;
+    padding: 10px;
+    border-radius: 10px;
+    transition: all ease-in-out 0.3s;
+    display: block;
+    text-decoration: none;
+
+    &:hover {
+        border-color: $primary;
+
+        .thumbnail {
+            transform: scale(1.1);
+        }
+
+        .title,
+        .price {
+            color: $primary;
+        }
+    }
+
+    // @media (min-width: 100px) {
+    //     width: calc(100% - 22px);
+    // }
+
+    // @media (min-width: 768px) {
+    //     width: calc(50% - 32px);
+    // }
+
+    // @media (min-width: 992px) {
+    //     width: calc(33.333333% - 36px);
+    // }
+
+    // @media (min-width: 1200px) {
+    //     width: calc(25% - 37px);
+    // }
+}
+
+.thumbnailWrapper {
+    height: 160px;
+    overflow: hidden;
+    display: flex;
+    @media (min-width: 100px) {
+        width: 100%;
+    }
+
+    @media (min-width: 768px) {}
+
+    @media (min-width: 992px) {}
+
+    @media (min-width: 1200px) {}
+
+    @media (min-width: 1400px) {}
+}
+
+.thumbnail {
+    height: 160px;
+    object-fit: contain;
+    object-position: center;
+    overflow: hidden;
+    transition: all ease-in-out 0.3s;
+
+    @media (min-width: 100px) {
+        width: 100%;
+        height: auto;
+    }
+
+    @media (min-width: 768px) {}
+
+    @media (min-width: 992px) {}
+
+    @media (min-width: 1200px) {}
+
+    @media (min-width: 1400px) {}
+}
+
+.title {
+    font-size: 16px;
+    font-weight: 500;
+    padding-top: 5px;
+    color: $text-color;
+    transition: all ease-in-out 0.3s;
+}
+
+.price {
+    font-size: 12px;
+    padding-top: 5px;
+    color: $text-color;
+    transition: all ease-in-out 0.3s;
+}

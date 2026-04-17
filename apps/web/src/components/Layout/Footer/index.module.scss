@@ -1,0 +1,84 @@
+@import '@/styles/variables';
+
+.footer {
+    background-color: $background-color;
+}
+
+.memberTitle {
+    font-size: 27px;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.socialTitle {
+    line-height: 32px;
+    font-size: 16px;
+    padding-right: 20px;
+    font-weight: 500;
+    display: none;
+
+    @media (min-width: 768px) {
+        display: inline-block;
+    }
+}
+
+.socialButton {
+    background-color: $background-color !important;
+    border-radius: 30px !important;
+}
+
+.linkTitle {
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    display: block;
+    color: $text-color;
+
+}
+
+.link {
+    color: $text-color;
+    font-size: 13px;
+    margin-bottom: 10px;
+    display: block;
+    transition: all ease-in-out 0.3s;
+
+    &:hover {
+        color: $primary;
+    }
+}
+
+.linkTitleCapU {
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    display: block;
+    color: $text-color;
+
+    &:hover {
+        color: $primary;
+    }
+}
+
+.linkTitleCap {
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: capitalize;
+    margin-bottom: 15px;
+    display: block;
+    color: $text-color;
+
+    &:hover {
+        color: $primary;
+    }
+
+}
+
+.contactTitle {
+    font-size: 24px;
+    font-weight: 500;
+    padding-bottom: 15px;
+    display: block;
+}

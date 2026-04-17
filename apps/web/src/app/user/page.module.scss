@@ -1,0 +1,55 @@
+@import '@/styles/_variables.scss';
+.container{
+    border: 1px solid $border-color;
+    padding: 15px;
+    border-radius: 10px;
+}
+.profile{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+}
+.image{
+    img{
+        height: 50px;
+        width: 50px;
+        border-radius: 30px;
+        border: 1px solid $border-color;
+    }
+}
+.name{
+    span{
+        display: block;
+        &:first-child{
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+        &:last-child{
+            font-size: 12px;
+            color: $icon-color;
+        }
+    }
+}
+.title{
+    margin: 0; 
+    font-weight: 700!important;
+    font-size: 12px;
+    margin-bottom: 20px;
+    display: block;
+    text-transform: uppercase;
+}
+.value{
+    display: block;
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom:20px;
+}
+.label{
+    display: block;
+    font-size: 10px;
+    font-weight: 400;
+    margin-bottom: 3px;
+    color: $icon-color;
+    text-transform: uppercase;
+}

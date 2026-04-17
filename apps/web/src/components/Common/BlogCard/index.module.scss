@@ -1,0 +1,96 @@
+@import '@/styles/variables';
+
+.wrapper {
+    border: 1px solid $border-color;
+    border-radius: 10px;
+    padding: 10px;
+    transition: all ease-in-out 0.3s;
+
+    .category,
+    .title,
+    .date {
+        transition: all ease-in-out 0.3s;
+        color: $text-color;
+    }
+
+    &:hover {
+        border-color: $primary;
+
+        .thumbnail {
+            transform: scale(1.1);
+
+        }
+
+        .category,
+        .title,
+        .date {
+            color: $primary;
+        }
+    }
+
+    @media (min-width: 100px) {
+        width: calc(100% - 22px);
+    }
+
+    @media (min-width: 768px) {
+        width: calc(50% - 32px);
+    }
+
+    @media (min-width: 992px) {
+        width: calc(33.333333% - 36px);
+    }
+
+    @media (min-width: 1200px) {
+        width: calc(25% - 37px);
+    }
+}
+
+.thumbnailWrapper {
+    overflow: hidden;
+    border-radius: 5px;
+
+    @media (min-width: 100px) {
+        width: 100%;
+    }
+
+    @media (min-width: 768px) {}
+
+    @media (min-width: 992px) {}
+
+    @media (min-width: 1200px) {}
+
+    @media (min-width: 1400px) {}
+}
+
+.thumbnail {
+    transition: all ease-in-out 0.3s;
+    border-radius: 5px;
+
+    @media (min-width: 100px) {
+        width: 100%;
+        height: auto;
+    }
+
+    @media (min-width: 768px) {}
+
+    @media (min-width: 992px) {}
+
+    @media (min-width: 1200px) {}
+
+    @media (min-width: 1400px) {}
+}
+
+.category,
+.date {
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.title {
+    font-size: 16px;
+    font-weight: 500;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}

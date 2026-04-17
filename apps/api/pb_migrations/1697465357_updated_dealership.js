@@ -1,0 +1,96 @@
+/// <reference path="../pb_data/types.d.ts" />
+migrate((db) => {
+  const dao = new Dao(db)
+  const collection = dao.findCollectionByNameOrId("dwfct4dvoaflgi0")
+
+  collection.indexes = []
+
+  // remove
+  collection.schema.removeField("i8wjsw42")
+
+  // remove
+  collection.schema.removeField("9p0wmp3b")
+
+  // remove
+  collection.schema.removeField("pyjvlzcf")
+
+  // add
+  collection.schema.addField(new SchemaField({
+    "system": false,
+    "id": "vbupi78b",
+    "name": "user_id",
+    "type": "relation",
+    "required": false,
+    "presentable": false,
+    "unique": false,
+    "options": {
+      "collectionId": "_pb_users_auth_",
+      "cascadeDelete": false,
+      "minSelect": null,
+      "maxSelect": 1,
+      "displayFields": null
+    }
+  }))
+
+  return dao.saveCollection(collection)
+}, (db) => {
+  const dao = new Dao(db)
+  const collection = dao.findCollectionByNameOrId("dwfct4dvoaflgi0")
+
+  collection.indexes = [
+    "CREATE INDEX `idx_oM70g4x` ON `dealership` (`name`)"
+  ]
+
+  // add
+  collection.schema.addField(new SchemaField({
+    "system": false,
+    "id": "i8wjsw42",
+    "name": "name",
+    "type": "text",
+    "required": false,
+    "presentable": false,
+    "unique": false,
+    "options": {
+      "min": null,
+      "max": null,
+      "pattern": ""
+    }
+  }))
+
+  // add
+  collection.schema.addField(new SchemaField({
+    "system": false,
+    "id": "9p0wmp3b",
+    "name": "phone",
+    "type": "text",
+    "required": false,
+    "presentable": false,
+    "unique": false,
+    "options": {
+      "min": null,
+      "max": null,
+      "pattern": ""
+    }
+  }))
+
+  // add
+  collection.schema.addField(new SchemaField({
+    "system": false,
+    "id": "pyjvlzcf",
+    "name": "fax",
+    "type": "text",
+    "required": false,
+    "presentable": false,
+    "unique": false,
+    "options": {
+      "min": null,
+      "max": null,
+      "pattern": ""
+    }
+  }))
+
+  // remove
+  collection.schema.removeField("vbupi78b")
+
+  return dao.saveCollection(collection)
+})

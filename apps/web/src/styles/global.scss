@@ -1,0 +1,93 @@
+// @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+
+@import "./variables";
+@import "./container";
+@import "./slick.min.scss";
+@import "./slick-theme.min.scss";
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  // -webkit-font-smoothing: antialiased !important;
+  // -moz-osx-font-smoothing: grayscale !important;
+  // font-family: "Quicksand", sans-serif;
+}
+
+* {
+}
+
+b {
+  font-weight: bold !important;
+}
+
+.advSearch {
+  .ant-tabs-tab {
+    padding: 10px 20px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+}
+
+@media (min-width: 100px) {
+  .carList {
+    flex-direction: column;
+  }
+
+  .gap {
+    height: 10px;
+  }
+}
+
+@media (min-width: 768px) {
+  .carList {
+    flex-direction: row;
+  }
+
+  .gap {
+    height: 30px;
+  }
+}
+
+@media (min-width: 992px) {
+  .gap {
+    height: 60px;
+  }
+}
+
+@media (min-width: 1200px) {
+}
+
+@media (min-width: 1400px) {
+}
+
+.used_car_card_slider {
+  width: calc(100% - 42px) !important;
+  margin-left: 10px;
+}
+
+.slick-next:before,
+.slick-prev:before {
+  color: $text-color;
+}
+.image-gallery-right-nav .image-gallery-svg,
+.image-gallery-left-nav .image-gallery-svg {
+  height: 70px !important;
+  width: 35px !important;
+}
+
+span.variantBtn {
+  font-weight: bold;
+  font-size: 12px;
+  position: relative;
+  top: -1px;
+  text-transform: uppercase;
+}
+
+.specs-list h4 {
+  margin: 0 !important;
+  text-transform: capitalize;
+}

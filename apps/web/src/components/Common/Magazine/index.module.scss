@@ -1,0 +1,32 @@
+@import '@/styles/variables';
+
+.wrapper {
+    background-color: $background-color;
+    padding: 30px 0;
+}
+
+.thumbnailWrapper {
+    display: block;
+}
+
+.thumbnail {
+    width: 100%;
+}
+
+.title {
+    font-size: 32px;
+    padding-bottom: 20px;
+    display: block;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.para {
+    font-size: 14px;
+    padding-bottom: 20px;
+}
+
+.button {
+    text-transform: uppercase;
+    font-weight: 500 !important;
+}

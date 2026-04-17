@@ -1,0 +1,19 @@
+{
+  "name": "declic",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "husky": "^9.0.0",
+    "turbo": "^2.0.0"
+  },
+  "packageManager": "yarn@1.22.22"
+}

@@ -1,0 +1,55 @@
+@import "src/Styles/_variables.scss";
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  // position: sticky;
+  top: 0;
+  z-index: 99;
+  border-bottom: 1px solid $border;
+  position: fixed;
+  width: 100%;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  & > img {
+    height: 35px;
+  }
+}
+.sider {
+  top: 64px;
+  bottom: 0;
+  position: fixed !important;
+  overflow-x: hidden;
+  overflow-y: auto;
+  border-right: 1px solid $border;
+  height: calc(100% - 110px);
+}
+
+.siderMenu {
+  height: 100%;
+}
+.main {
+  margin-left: 200px;
+  padding: 0 25px;
+  transition: all ease-in-out 0.25s;
+  &.collapsed {
+    margin-left: 80px;
+  }
+  padding-top: 65px;
+}
+.breadcrumb {
+  margin: 16px 0;
+}
+.content {
+  // padding: 15px;
+  margin: 0;
+  min-height: calc(100vh - 156px);
+  background-color: $bgcolor;
+  border-radius: 8px;
+}

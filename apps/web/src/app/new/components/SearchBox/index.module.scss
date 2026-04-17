@@ -1,0 +1,121 @@
+@import '@/styles/_variables.scss';
+
+.searchwrapper {
+    background-color: $background-color;
+    padding: 0px 20px;
+    border-radius: 20px;
+    min-height: 250px;
+}
+
+.bodyTypes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.bodyTypesList {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+    justify-content: flex-start;
+    overflow-x: scroll;
+    cursor: pointer;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.bodyTypeIcon {
+    height: 40px;
+    width: auto;
+
+    @media (min-width: 100px) {
+        height: 24px;
+    }
+
+    @media (min-width: 768px) {}
+
+    @media (min-width: 992px) {}
+
+    @media (min-width: 1200px) {}
+
+    @media (min-width: 1400px) {}
+}
+
+.select {
+    @media (min-width: 100px) {
+        width: 100%;
+    }
+
+    @media (min-width: 768px) {
+        width: 200px;
+    }
+
+    @media (min-width: 992px) {}
+
+    @media (min-width: 1200px) {}
+
+    @media (min-width: 1400px) {}
+}
+
+.button {
+    @media (min-width: 100px) {
+        width: 100%;
+    }
+
+    @media (min-width: 768px) {
+        width: 200px;
+    }
+
+    @media (min-width: 992px) {
+        width: 150px;
+    }
+
+    @media (min-width: 1200px) {}
+
+    @media (min-width: 1400px) {}
+}
+
+.contentWrapper {
+    @media (min-width: 100px) {
+        width: 100%;
+    }
+
+    @media (min-width: 768px) {}
+
+    @media (min-width: 992px) {
+        width: unset;
+    }
+
+    @media (min-width: 1200px) {}
+
+    @media (min-width: 1400px) {}
+}
+
+.active {
+    color: $primary;
+}
+
+.selectUsed {
+    @media (min-width: 100px) {
+        width: 100%;
+    }
+
+    @media (min-width: 768px) {
+        width: 150px;
+    }
+
+    @media (min-width: 992px) {
+        width: 200px;
+    }
+
+    @media (min-width: 1200px) {
+        width: 250px;
+    }
+
+    @media (min-width: 1400px) {}
+}

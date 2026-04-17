@@ -1,0 +1,21 @@
+@import '@/styles/variables';
+
+.list{
+    & > a{
+        color: $icon-color;
+        border-bottom: 1px solid $border-color;
+        line-height: 35px;
+        display: block;
+        // margin-bottom: 5px;
+        padding-left: 5px;
+        &::after{
+            content: '→';
+            position: absolute;
+            right: 5px;
+        }
+
+    }
+    &:last-child > a{
+        border: 0
+    }
+}

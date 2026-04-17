@@ -1,0 +1,55 @@
+@import '@/styles/variables';
+
+.wrapper {
+    width: 128px;
+    border: 1px solid $border-color;
+    flex-direction: row;
+    padding: 5px 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    transition: all ease-in-out 0.3s;
+
+    &:hover {
+        border-color: $primary;
+    }
+
+    @media (min-width: 100px) {
+        width: calc(50% - 30px);
+    }
+
+    @media (min-width: 768px) {
+        width: calc(33.3333333% - 32px);
+    }
+
+    @media (min-width: 992px) {
+        width: calc(25% - 34px);
+    }
+
+    @media (min-width: 1200px) {
+        width: 128px
+    }
+
+    @media (min-width: 1400px) {}
+}
+
+.wrapper:hover .title {
+    color: $primary;
+}
+
+.image {
+    height: 30px;
+    width: 30px;
+    object-fit: contain;
+    object-position: center;
+}
+
+.title {
+    font-weight: 700;
+    padding-left: 10px;
+    text-transform: uppercase;
+    font-size: 13px;
+    color: $text-color;
+    transition: all ease-in-out 0.3s;
+}

@@ -1,0 +1,58 @@
+# dependencies
+node_modules/
+apps/*/node_modules/
+.pnp
+.pnp.js
+.yarn/cache
+.yarn/install-state.gz
+
+# turbo
+.turbo
+
+# build output
+apps/web/.next/
+apps/web/out/
+apps/web/build/
+apps/admin/dist/
+apps/admin/dist-ssr/
+
+# pocketbase runtime
+apps/api/pb_data/
+apps/api/pocketbase
+
+# scraper artefacts
+apps/api/scripts/import-automobile-tn/checkpoint.json
+apps/api/scripts/import-automobile-tn/logs/
+
+# testing
+coverage/
+
+# misc
+.DS_Store
+*.pem
+*.local
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# local env files
+.env
+.env.local
+.env*.local
+
+# vercel
+.vercel
+
+# firebase
+.firebase/
+
+# typescript
+*.tsbuildinfo
+apps/web/next-env.d.ts
+
+# editor
+.idea/
+.vscode/

@@ -1,0 +1,31 @@
+/// <reference path="../pb_data/types.d.ts" />
+migrate((db) => {
+  const dao = new Dao(db)
+  const collection = dao.findCollectionByNameOrId("gm2hnquo4sdou9v")
+
+  // add
+  collection.schema.addField(new SchemaField({
+    "system": false,
+    "id": "eay2ctwq",
+    "name": "state",
+    "type": "text",
+    "required": false,
+    "presentable": false,
+    "unique": false,
+    "options": {
+      "min": null,
+      "max": null,
+      "pattern": ""
+    }
+  }))
+
+  return dao.saveCollection(collection)
+}, (db) => {
+  const dao = new Dao(db)
+  const collection = dao.findCollectionByNameOrId("gm2hnquo4sdou9v")
+
+  // remove
+  collection.schema.removeField("eay2ctwq")
+
+  return dao.saveCollection(collection)
+})

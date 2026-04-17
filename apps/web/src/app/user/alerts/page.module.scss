@@ -1,0 +1,43 @@
+@import '@/styles/_variables.scss';
+
+.select {
+    @media (min-width: 100px) {
+        width: 100%;
+    }
+
+    @media (min-width: 768px) {
+        width: 200px;
+    }
+
+    @media (min-width: 992px) {}
+
+    @media (min-width: 1200px) {}
+
+    @media (min-width: 1400px) {}
+}
+
+.button {
+    @media (min-width: 100px) {
+        width: 100%;
+    }
+
+    @media (min-width: 768px) {
+        width: 200px;
+    }
+
+    @media (min-width: 992px) {
+        width: 150px;
+    }
+
+    @media (min-width: 1200px) {}
+
+    @media (min-width: 1400px) {}
+}
+
+.title{
+    margin: 0; 
+    font-weight: 700!important;
+    font-size: 12px;
+    display: block;
+    text-transform: uppercase;
+}

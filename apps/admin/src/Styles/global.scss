@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@400;600&display=swap");
+@import "./variables";
+
+* {
+  font-family: "Barlow", sans-serif !important;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0.5em 0;
+}
+img {
+  image-rendering: optimizeQuality;
+}
+
+.ant-menu-title-content {
+  font-size: 12px;
+  text-transform: capitalize;
+}
+
+.ant-layout-sider-children {
+  & > ul {
+    & > li {
+      & > .ant-menu-title-content {
+        font-size: 13px;
+        text-transform: capitalize;
+      }
+      & > div > .ant-menu-title-content {
+        font-size: 13px;
+        text-transform: capitalize;
+      }
+    }
+  }
+}
+
+.ant-layout-sider-trigger {
+  border: 1px solid $border;
+  &:hover {
+    transition: all 0.3s cubic-bezier(0.2, 0, 0, 1) 0s;
+    background-color: $border;
+  }
+  span::after {
+    content: "Collapse";
+  }
+}
+.collapsedSider {
+  .ant-layout-sider-trigger {
+    span::after {
+      content: "";
+    }
+  }
+}
+.ant-table-cell.ant-table-selection-column {
+  padding-inline-end: 15px !important;
+}
+
+.ant-menu-submenu-open {
+  .ant-menu-submenu-title {
+    .ant-menu-title-content {
+      font-weight: bold !important;
+    }
+  }
+}
+
+.ant-menu-item-selected {
+  font-weight: bold;
+}
+
+.ql-container.ql-snow {
+  border-bottom-left-radius: 8px !important;
+  border-bottom-right-radius: 8px !important;
+}
+.ql-toolbar.ql-snow {
+  border-top-left-radius: 8px !important;
+  border-top-right-radius: 8px !important;
+}
+
+.avatar-uploader-slider {
+  & > .ant-upload.ant-upload-select {
+    width: 100% !important;
+    border-radius: 0 !important;
+  }
+}
+
+.hori-item {
+  display: flex;
+  flex-direction: row;
+}
+
+.custom-class .ant-upload-list {
+  margin-top: 10px;
+}
+
+.custom-quill.error .ql-container {
+  border-color: #ff4d4f;
+}
+
+.custom-quill .ql-editor {
+  min-height: 400px;
+}
