@@ -64,7 +64,10 @@ export function getSideMenu(navigate, role) {
       getItem("Contact Us", "", "/leads/contact"),
       getItem("Newsletter", "", "/leads/newsletter"),
     ]),
-    getItem("Subscriptions", <LikeOutlined />, "/", [getItem("Magazine", "", "/sub/magazine")]),
+    getItem("Magazine", <LikeOutlined />, "/", [
+      getItem("Lists", "", "/sub/magazine/lists"),
+      getItem("Subscription", "", "/sub/magazine/subscription"),
+    ]),
     // getItem("Credits", <DollarOutlined />, "/credits"),
   ];
 

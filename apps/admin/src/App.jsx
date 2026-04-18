@@ -49,6 +49,7 @@ import Posts from "./Pages/News/Posts";
 import EditPost from "./Pages/News/EditPost";
 import AddPost from "./Pages/News/AddPost";
 
+import MagazineLists from "./Pages/Subscriptions/Lists";
 import MagazineSubscriptions from "./Pages/Subscriptions/Magazine";
 
 export const NotificationContext = createContext(null);
@@ -144,7 +145,11 @@ const App = () => {
                 </Route>
 
                 <Route path="sub">
-                  <Route path="magazine" element={<MagazineSubscriptions />} />
+                  <Route path="magazine">
+                    <Route index element={<Navigate to="lists" replace />} />
+                    <Route path="lists" element={<MagazineLists />} />
+                    <Route path="subscription" element={<MagazineSubscriptions />} />
+                  </Route>
                 </Route>
               </Route>
               <Route path="/login" element={<Login />} />

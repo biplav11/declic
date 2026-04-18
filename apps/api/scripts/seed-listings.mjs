@@ -6,7 +6,7 @@
 const PB_URL = process.env.PB_URL || "http://127.0.0.1:8090";
 const PB_ADMIN_EMAIL = process.env.PB_ADMIN_EMAIL;
 const PB_ADMIN_PASSWORD = process.env.PB_ADMIN_PASSWORD;
-const COUNT = Number(process.env.SEED_COUNT || 20);
+const COUNT = Number(process.env.SEED_COUNT || 30);
 
 if (!PB_ADMIN_EMAIL || !PB_ADMIN_PASSWORD) {
   console.error("PB_ADMIN_EMAIL and PB_ADMIN_PASSWORD must be set.");
@@ -16,19 +16,10 @@ if (!PB_ADMIN_EMAIL || !PB_ADMIN_PASSWORD) {
 const rand = (arr) => arr[Math.floor(Math.random() * arr.length)];
 const randInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
-const TITLES = [
-  "Low mileage, one owner",
-  "Excellent condition",
-  "Fully serviced, ready to drive",
-  "Dealer maintained",
-  "Leather interior, premium trim",
-  "Clean title, no accidents",
-  "Recent tires and brakes",
-  "Sunroof, navigation, alloys",
-];
 const STATES = ["Used", "Like New", "Certified", "Available"];
 const COLORS = ["red", "blue", "green", "other"];
-const FABRICS = ["red", "blue", "green", "other"];
+const CONDITIONS = ["new", "excellent", "good", "fair", "poor"];
+const DISPLACEMENTS = [1000, 1200, 1400, 1600, 1800, 2000, 2500, 3000];
 const ADDRESSES = [
   "Tunis, Tunisia",
   "Sfax, Tunisia",
@@ -71,16 +62,34 @@ async function main() {
   const token = await authAdmin();
   console.log("Authenticated.");
 
-  const [variants, models, users] = await Promise.all([
+  const [variants, models, users, safetyItems, interiorItems, functionalItems, outdoorItems] = await Promise.all([
     fetchAll("variants", token),
     fetchAll("models", token),
     fetchAll("users", token),
+    fetchAll("safety", token),
+    fetchAll("interior", token),
+    fetchAll("functional", token),
+    fetchAll("outdoor", token),
   ]);
 
-  console.log(`Have ${variants.length} variants, ${models.length} models, ${users.length} users.`);
+  console.log(
+    `Have ${variants.length} variants, ${models.length} models, ${users.length} users, ` +
+    `${safetyItems.length} safety, ${interiorItems.length} interior, ` +
+    `${functionalItems.length} functional, ${outdoorItems.length} outdoor.`
+  );
   if (variants.length === 0 || models.length === 0) {
     throw new Error("Need at least one variant and one model before seeding listings.");
   }
+
+  const sample = (arr, min, max) => {
+    const n = Math.min(arr.length, randInt(min, max));
+    const copy = [...arr];
+    for (let i = copy.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [copy[i], copy[j]] = [copy[j], copy[i]];
+    }
+    return copy.slice(0, n).map((r) => r.id);
+  };
 
   const created = [];
   for (let i = 0; i < COUNT; i++) {
@@ -92,7 +101,6 @@ async function main() {
     const mileage = randInt(5000, 180000);
 
     const payload = {
-      title: `${rand(TITLES)} — ${model.name} ${year}`,
       state: rand(STATES),
       price: `${price} TND`,
       variant: variant.id,
@@ -101,13 +109,15 @@ async function main() {
       mileage: `${mileage} km`,
       address: rand(ADDRESSES),
       phone: `+216 ${randInt(20, 99)} ${randInt(100, 999)} ${randInt(100, 999)}`,
-      safety: [],
-      interior: [],
-      exterior: [],
-      functional: [],
+      safety: sample(safetyItems, 5, 6),
+      interior: sample(interiorItems, 5, 6),
+      outdoor: sample(outdoorItems, 5, 6),
+      functional: sample(functionalItems, 5, 6),
       interior_color: rand(COLORS),
       exterior_color: rand(COLORS),
-      interior_fabric: rand(FABRICS),
+      general_condition: rand(CONDITIONS),
+      previous_owners: randInt(0, 4),
+      engine_displacement: rand(DISPLACEMENTS),
       ...(user ? { user: user.id } : {}),
     };
 

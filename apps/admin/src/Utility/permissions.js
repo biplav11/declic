@@ -17,7 +17,7 @@ export const EDITOR_ALLOWED_MENU_KEYS = [
   "News",
   "Vehicles",
   "Leads",
-  "Subscriptions",
+  "Magazine",
 ];
 
 export const EDITOR_ALLOWED_GENERAL_CHILDREN = ["Site Settings"];

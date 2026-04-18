@@ -219,8 +219,8 @@ export default function MagazineSubscriptions() {
 
   return (
     <MainLayout
-      selected="Magazine"
-      expanded="Subscriptions"
+      selected="Subscription"
+      expanded="Magazine"
       title="Magazine Subscriptions"
       clickfunction={openAdd}
     >

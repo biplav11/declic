@@ -40,11 +40,6 @@ export default function Listings() {
 
   const columns = [
     {
-      title: "Title",
-      dataIndex: "title",
-      render: (text) => <Text>{text}</Text>,
-    },
-    {
       title: "Brand / Model",
       dataIndex: "model",
       render: (_, { expand }) => (
